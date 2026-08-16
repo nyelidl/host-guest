@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep FR.prep
+loadamberparams FR.frcmod
+
+loadamberparams gly.frcmod
+
+GLO = loadmol2 cavity_gly.mol2
+GLY = loadmol2 gly.mol2
+
+set MOL head null
+set MOL tail null
+set GLO head null
+set GLO tail null
+set GLY head null
+set GLY tail null
+
+system = loadpdb InitialSystem_GLY.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system_GLY.prmtop system_GLY.inpcrd
+savepdb system system_GLY_leap.pdb
+
+quit

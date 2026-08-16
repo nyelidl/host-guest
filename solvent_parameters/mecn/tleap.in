@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep MeP5.prep
+loadamberparams MeP5.frcmod
+
+loadamberparams mecn.frcmod
+
+MEC = loadmol2 cavity_mecn.mol2
+ACN = loadmol2 mecn.mol2
+
+set MOL head null
+set MOL tail null
+set ACN head null
+set ACN tail null
+set MEC head null
+set MEC tail null
+
+system = loadpdb InitialSystem_MeCN.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system.prmtop system.inpcrd
+savepdb system system_MeCN_leap.pdb
+
+quit

@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep FR.prep
+loadamberparams FR.frcmod
+
+loadamberparams ch2cl2.frcmod
+
+DCM = loadmol2 ch2cl2.mol2
+CDM = loadmol2 cavity_ch2cl2.mol2
+
+set MOL head null
+set MOL tail null
+set DCM head null
+set DCM tail null
+set CDM head null
+set CDM tail null
+
+system = loadpdb InitialSystem_CH2Cl2.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system_CH2Cl2.prmtop system_CH2Cl2.inpcrd
+savepdb system system_CH2Cl2_leap.pdb
+
+quit

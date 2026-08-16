@@ -1,0 +1,21 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_EG.pdb
+
+structure FR.pdb
+  number 1
+  centerofmass
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# One EG molecule initially placed in the cavity
+structure cavity_eg.pdb
+  number 1
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# Bulk EG solvent
+structure eg.pdb
+  number 359
+  inside box 0.0 0.0 0.0 33.160 33.160 33.160
+end structure

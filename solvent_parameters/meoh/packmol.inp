@@ -1,0 +1,21 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_MeOH.pdb
+
+structure MeP5.pdb
+  number 1
+  centerofmass
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# One MeOH molecule initially placed in the cavity
+structure cavity_meoh.pdb
+  number 1
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# Bulk MeOH solvent
+structure meoh.pdb
+  number 299
+  inside box 0.0 0.0 0.0 33.160 33.160 33.160
+end structure

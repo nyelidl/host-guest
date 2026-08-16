@@ -1,0 +1,11 @@
+HETATM    1  C1  CDM     1       0.000   0.000   0.000
+HETATM    2 CL1  CDM     1       1.780   0.000   0.000
+HETATM    3 CL2  CDM     1      -0.890   1.540   0.000
+HETATM    4  H1  CDM     1      -0.890  -0.510   0.890
+HETATM    5  H2  CDM     1      -0.890  -0.510  -0.890
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+END

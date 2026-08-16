@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep MeP5.prep
+loadamberparams MeP5.frcmod
+
+loadamberparams meoh.frcmod
+
+MOH = loadmol2 cavity_meoh.mol2
+MET = loadmol2 meoh.mol2
+
+set MOL head null
+set MOL tail null
+set MET head null
+set MET tail null
+set MOH head null
+set MOH tail null
+
+system = loadpdb InitialSystem_MeOH.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system.prmtop system.inpcrd
+savepdb system system_MeOH_leap.pdb
+
+quit

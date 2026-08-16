@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep FR.prep
+loadamberparams FR.frcmod
+
+loadamberparams eg.frcmod
+
+EGE = loadmol2 cavity_eg.mol2
+EGL = loadmol2 eg.mol2
+
+set MOL head null
+set MOL tail null
+set EGE head null
+set EGE tail null
+set EGL head null
+set EGL tail null
+
+system = loadpdb InitialSystem_EG.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system.prmtop system.inpcrd
+savepdb system system_EG_leap.pdb
+
+quit

@@ -1,0 +1,21 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_MeCN.pdb
+
+structure MeP5.pdb
+  number 1
+  centerofmass
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# One MeCN molecule initially placed in the cavity
+structure cavity_mecn.pdb
+  number 1
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# Bulk MeCN solvent
+structure mecn.pdb
+  number 319
+  inside box 0.0 0.0 0.0 33.160 33.160 33.160
+end structure

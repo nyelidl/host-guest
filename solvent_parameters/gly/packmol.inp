@@ -1,0 +1,19 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_GLY.pdb
+
+structure FR.pdb
+  number 1
+  centerofmass
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+structure cavity_gly.pdb
+  number 1
+  fixed 16.580 16.580 17.800 90.0 0.0 0.0
+end structure
+
+structure gly.pdb
+  number 249
+  inside box 0.0 0.0 0.0 33.160 33.160 33.160
+end structure

@@ -1,0 +1,11 @@
+HETATM    1  C1  CLF     1       0.000   0.000   0.000  1.00  0.00           C
+HETATM    2  CL1 CLF     1       1.760   0.000   0.000  1.00  0.00          CL
+HETATM    3  CL2 CLF     1      -0.587   1.660   0.000  1.00  0.00          CL
+HETATM    4  CL3 CLF     1      -0.587  -0.830   1.438  1.00  0.00          CL
+HETATM    5  H1  CLF     1      -0.587  -0.830  -1.017  1.00  0.00           H
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+END

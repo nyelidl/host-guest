@@ -1,0 +1,19 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_H2O.pdb
+
+structure MeP5.pdb
+  number 1
+  centerofmass
+  fixed 14.000 14.000 14.000 0.0 0.0 0.0
+end structure
+
+structure cavity_h2o.pdb
+  number 1
+  fixed 14.000 14.000 14.000 0.0 0.0 0.0
+end structure
+
+structure h2o.pdb
+  number 599
+  inside box 0.0 0.0 0.0 28.000 28.000 28.000
+end structure

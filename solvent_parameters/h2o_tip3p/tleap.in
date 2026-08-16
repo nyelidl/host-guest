@@ -1,0 +1,19 @@
+source leaprc.gaff2
+source leaprc.water.tip3p
+
+loadamberprep MeP5.prep
+loadamberparams MeP5.frcmod
+
+set MOL head null
+set MOL tail null
+
+system = loadpdb InitialSystem_H2O.pdb
+
+set system box {28.000 28.000 28.000}
+
+check system
+
+saveamberparm system system.prmtop system.inpcrd
+savepdb system system_H2O_leap.pdb
+
+quit

@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep FR.prep
+loadamberparams FR.frcmod
+
+loadamberparams me2co.frcmod
+
+MEO = loadmol2 cavity_me2co.mol2
+ACE = loadmol2 me2co.mol2
+
+set MOL head null
+set MOL tail null
+set ACE head null
+set ACE tail null
+set MEO head null
+set MEO tail null
+
+system = loadpdb InitialSystem_Me2CO.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system_Me2CO.prmtop system_Me2CO.inpcrd
+savepdb system system_Me2CO_leap.pdb
+
+quit

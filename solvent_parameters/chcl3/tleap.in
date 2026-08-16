@@ -1,0 +1,27 @@
+source leaprc.gaff2
+
+loadamberprep MeP5.prep
+loadamberparams MeP5.frcmod
+
+loadamberparams chcl3.frcmod
+
+CLF = loadmol2 cavity_chcl3.mol2
+CHL = loadmol2 chcl3.mol2
+
+set MOL head null
+set MOL tail null
+set CHL head null
+set CHL tail null
+set CLF head null
+set CLF tail null
+
+system = loadpdb InitialSystem_CHCl3.pdb
+
+set system box {33.160 33.160 33.160}
+
+check system
+
+saveamberparm system system.prmtop system.inpcrd
+savepdb system system_CHCl3_leap.pdb
+
+quit

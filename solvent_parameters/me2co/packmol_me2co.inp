@@ -1,0 +1,21 @@
+tolerance 2.5
+filetype pdb
+output InitialSystem_Me2CO.pdb
+
+structure FR.pdb
+  number 1
+  centerofmass
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# One acetone molecule initially placed in the cavity/center
+structure cavity_me2co.pdb
+  number 1
+  fixed 16.580 16.580 16.580 0.0 0.0 0.0
+end structure
+
+# Bulk acetone solvent
+structure me2co.pdb
+  number 259
+  inside box 0.0 0.0 0.0 33.160 33.160 33.160
+end structure
